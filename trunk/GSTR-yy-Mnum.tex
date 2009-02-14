@@ -1,0 +1,131 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[reals]{layout} %provide \layout macro to show current page layout
+
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{wrapfig}
+
+\usepackage{amsmath}            % more evironment
+\usepackage{amssymb}            % more symbol
+
+\usepackage{ifpdf}
+\ifpdf
+\usepackage{epstopdf} % must be put after graphicx
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[pdftex,bookmarks=true]{hyperref}
+\hypersetup{
+  pdfauthor = {your names},
+  pdftitle = {GSTR-yy-Mnum},
+  pdfsubject = {your subject},
+  pdfkeywords = {GERDA,keyword2,...},
+}
+\pdfadjustspacing=1 %force pdfLaTeX to use the same spacing as LaTeX
+\else
+\usepackage[usenames,dvips]{color}
+\usepackage[ps2pdf]{hyperref}
+\fi
+
+\setlength{\oddsidemargin}{0.8cm}
+\setlength{\evensidemargin}{0cm}
+\setlength{\textwidth}{15cm}
+\setlength{\textheight}{21cm}
+\setlength{\hoffset}{0cm}
+\setlength{\voffset}{0cm}
+
+% Alter some LaTeX defaults for better treatment of floats: See p.105 % of "TeX Unbound" for suggested values. See pp. 199-200 of Lamport's % "LaTeX" book for details.
+
+% General parameters, for ALL pages:
+\renewcommand{\topfraction}{0.9} % max fraction of floats at top
+\renewcommand{\bottomfraction}{0.9} % max fraction of floats at bottom
+
+% Parameters for TEXT pages (not float pages):
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4} % 2 may work better
+\renewcommand{\textfraction}{0.1} % allow minimal text w. figs
+
+% Parameters for FLOAT pages (not text pages):
+\renewcommand{\floatpagefraction}{0.7}	% require fuller float pages
+% N.B.: floatpagefraction MUST be less than topfraction !!
+
+% remember to use [htp] or [htpb] for placement
+%\pagestyle{headings}
+
+
+\begin{document}
+
+% -------------------------------------------------------- 
+% title 
+% -------------------------------------------------------- 
+\begin{titlepage}\centering
+
+\begin{figure}[t!]\centering
+  \includegraphics[width=0.15\textwidth]{logoMPPMU}\hfil
+  \begin{minipage}[b]{0.5\linewidth}\centering
+    \rule[-4.2mm]{\textwidth}{0.3mm}\\\rule{0.98\textwidth}{0.1mm}\\
+    GERDA Scientific/Technical Report Munich\\\vspace{2mm}
+    GSTR-yy-Mnum \\\vspace{2mm}
+    Created: February 12, 2009\\\vspace{-7.5mm}
+    \rule[-5mm]{0.98\textwidth}{0.1mm}\\\rule{\textwidth}{0.3mm}\\
+  \end{minipage}\hfil
+  \includegraphics[width=0.15\textwidth]{logoGERDA}%
+\end{figure}
+
+\begin{flushright}
+Last updated: Feb. 12, 2009
+\end{flushright}
+\vspace{0.5cm}
+
+\Large{[Internal] Note/Memo/Draft/Manuel}
+\vspace{1cm}
+
+\LARGE{\LaTeX{} template for GERDA Scientific/Technical Report in Max-Planck-Institut f\"ur Physik in M\"unchen}
+\vspace{1cm}
+
+\Large{Jing Liu$^{\dagger}$\footnote{ \href{mailto:jingliu@mppmu.mpg.de}{Email: jingliu@mppmu.mpg.de}}}
+\vspace{0.5cm} 
+
+\normalsize{$^{\dagger}$\textit{Max-Planck-Institut f\"ur Physik in M\"unchen}}
+\vspace{0.5cm} 
+
+\rule{0.9\textwidth}{0.1mm}
+\begin{abstract}
+  A \LaTeX{} template of the Scientific/Technical Report is created for the GERDA group in the Max-Planck-Institut f\"ur Physik in M\"unchen. The usage of the template is explained in detail in this note.
+\end{abstract}
+\rule{0.9\textwidth}{0.1mm}
+
+\end{titlepage} 
+
+% -------------------------------------------------------- 
+% table of contents 
+% -------------------------------------------------------- 
+
+\pagenumbering{roman}
+
+\tableofcontents
+
+\pagebreak \setcounter{page}{1} \pagenumbering{arabic}
+
+% -------------------------------------------------------- 
+% main body 
+% -------------------------------------------------------- 
+
+\section{Page layout}
+\label{sec:manual}
+
+\layout
+
+\section{Verification of the simulation}
+\label{sec:verify}
+
+\section{Pulse shape analysis}
+\label{sec:physics}
+
+
+\clearpage
+ 
+%\addcontentsline{toc}{section}{Bibliography}
+
+\end{document}
+
